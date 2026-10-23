@@ -1,22 +1,82 @@
-title: Perry 的博客
-description: 记录技术学习、实践与思考。
+theme: jekyll-theme-chirpy
 lang: zh-CN
 timezone: Asia/Shanghai
+title: Perry 的博客
+tagline: 记录技术学习、实践与思考。
+description: 记录技术学习、实践与思考。
 url: "https://yuanwei2023.github.io"
 baseurl: "/perry.github.io"
-theme: minima
-github_username: yuanwei2023
+github:
+  username: yuanwei2023
+social:
+  name: Perry
+  links:
+    - https://github.com/yuanwei2023
+theme_mode:
+avatar:
+toc: true
+comments:
+  provider:
+assets:
+  self_host:
+    enabled: false
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+paginate: 10
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-header_pages:
-  - about.md
-
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+collections:
+  tabs:
+    output: true
+    sort_by: order
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+sass:
+  style: compressed
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
 exclude:
   - README.md
   - LICENSE
   - Gemfile
   - Gemfile.lock
   - vendor
+  - tools
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
